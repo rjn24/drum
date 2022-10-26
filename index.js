@@ -5,11 +5,13 @@ document.querySelectorAll(".drum")[i].addEventListener("click",function()
 {
     var buttonInnerHTML=this.innerHTML;
             makesound(buttonInnerHTML);
+            buttonanimation(buttonInnerHTML);
 } );
 }
 document.addEventListener("keydown",function(event)
 {
     makesound(event.key);
+    buttonanimation(event.key);
 });
  function makesound(key)
   {
@@ -47,3 +49,13 @@ document.addEventListener("keydown",function(event)
    
     }
  }
+function buttonanimation(currentkey)
+ {
+    var animationbutton = document.queryselect("."+currentkey);
+    animationbutton.classList.add("pressed");
+     setTimeout(fuction()
+                {
+                    animationbutton.classlist.remove("pressed");
+                },100);
+            
+  } 
